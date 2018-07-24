@@ -1,0 +1,72 @@
+<!-- <div class="container-fluid">
+    <div class="col-md-12">
+        <h3>Daily Status</h3>
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-4">
+            <label>Employee ID</label>
+        </div>
+        <div class="col-md-5">
+            <input type="text">
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-primary">Submit</button>
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-4">
+            <label>Select Date</label>
+        </div>
+        <div class="col-md-5">
+            <input type="date">
+        </div>
+    </div>
+    <div class="col-md-12">
+        <table id="employees">
+            <tr>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>01/03/2018</td>
+                <td>Maria Anders</td>
+            </tr>
+            <tr>
+                <td>02/03/2018</td>
+                <td>Christina Berglund</td>
+            </tr>
+            <tr>
+                <td>03/03/2018</td>
+                <td>Francisco Chang</td>
+            </tr>
+
+        </table>
+
+
+    </div> -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img class="logo-image" data-ng-src="/assets/images/atmecs-logo.png" src="/assets/images/atmecs-logo.png">
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a  routerLink="myprofile">My Profile</a>
+                </li>
+                <li>
+                    <a routerLink="emplist">Employee List</a>
+                </li>
+                <li>
+                    <a routerLink="mempstatus">All Employee status</a>
+                </li>
+                <li>
+                    <a routerLink="/login">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div>
+        <router-outlet></router-outlet>
+    </div>

@@ -1,0 +1,106 @@
+<div class="container">
+    <!-- <div class="col-md-12">
+<input type="text"  [disabled]="isDisabled"
+value="ATMECS Technologies PVT.LTD" [(ngModel)]="employee.company" name="company">
+</div>
+<div class="col-md-12">
+
+</div>
+<div class="col-md-12">
+
+</div>
+<div class="col-md-12">
+
+</div> -->
+    <form (ngSubmit)="saveBook()" #bookForm="ngForm">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Company Name" disabled  name="company" [(ngModel)]="company" />
+        </mat-form-field>
+
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <select class="form-control" [(ngModel)]="employee.Title" name="employee.Title">
+                    <option>Mr.</option>
+                    <option>Ms.</option>
+                </select>
+            </tr>
+            <tr>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Employee Id" [(ngModel)]="employee.empid" name="employee.empid">
+                </mat-form-field>
+            </tr>
+
+            <tr>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="name" [(ngModel)]="employee.name" name="employee.name">
+                </mat-form-field>
+            </tr>
+        </table>
+
+        <p>
+            <mat-form-field class="example-full-width">
+                <textarea matInput placeholder="Address" [(ngModel)]="employee.address" name="employee.address"></textarea>
+            </mat-form-field>
+        </p>
+
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <select class="form-control" [(ngModel)]="employee.gender" name="employee.gender">
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </tr>
+            <tr>
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker1" placeholder="Choose a date" [(ngModel)]="employee.dob" name="employee.dob">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+            </tr>
+            <tr>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Designantion" [(ngModel)]="employee.Designation" name="Designation" >
+                </mat-form-field>
+
+            </tr>
+            <tr>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="reporting_to" [(ngModel)]="employee.reporting_to" name="reporting_to" >
+                </mat-form-field>
+            </tr>
+            <tr>
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker" placeholder="Choose a Joining date" [(ngModel)]="employee.doj" name="employee.doj">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </tr>
+            <tr>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Role" name="role" [(ngModel)]="employee.Role" >
+                </mat-form-field>
+            </tr>
+
+        </table>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher" [(ngModel)]="employee.emailid"
+                [name]="employee.email">
+            <mat-hint>Errors appear instantly!</mat-hint>
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is
+                <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input type="tel" matInput placeholder="Telephone" [(ngModel)]="employee.mobileno" name="employee.mobileno">
+
+        </mat-form-field>
+        <div class="button-row">
+            <button type="submit" mat-raised-button color="primary">Save</button>
+            <button mat-raised-button color="primary" (click)=onReset()>Reset</button>
+        </div>
+    </form>
+</div>

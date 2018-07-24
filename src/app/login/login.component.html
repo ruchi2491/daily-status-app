@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <label>Login </label>
+    </div>
+    <div class="row">
+        <label>Username :</label>
+    </div>
+    <div class="row">
+        <input type="text" [(ngModel)]="username" />
+    </div>
+    <div class="row">
+        <label>Password :</label>
+    </div>
+    <div class="row">
+        <input type="password" [(ngModel)]="password" />
+    </div>
+    <div class="row">
+        <button class="btn btn-primary" (click)="login()" >Login</button>
+    </div>
+    <div class="row">
+        <a routerLink="/register">Register here</a>
+    </div>
+

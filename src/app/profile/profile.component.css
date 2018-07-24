@@ -1,0 +1,24 @@
+div.container{
+     border-style: solid;
+    border-radius: 5px;
+    /* border-color: lavender;
+    background-color: #e0f3ee;  */
+    margin-top: 5%;
+    padding: 10px;
+    width: 50%;
+    border-width: thin;
+ }
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  #label{
+      font : bold;
+      align-items: left;
+  }
+  

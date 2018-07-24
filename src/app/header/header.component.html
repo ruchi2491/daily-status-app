@@ -1,0 +1,38 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img class="logo-image" data-ng-src="/assets/images/atmecs-logo.png" src="/assets/images/atmecs-logo.png">
+            </a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li >
+                <a  routerLink="myprofile">My Profile</a>
+            </li>
+            <!-- <li>
+                <a routerLink="login">Login</a>
+            </li> -->
+            <li>
+                <a routerLink="emplist">Employee List</a>
+            </li>
+            <li>
+                <a routerLink="mempstatus">Employee status for manager</a>
+            </li>
+            <li>
+                <a routerLink="empstatus">Enter status</a>
+            </li>
+            <!-- <li>
+                <a routerLink="/empchangestatus">Change status</a>
+            </li> -->
+            <!-- <li>
+                <a routerLink="register">Register</a>
+            </li> -->
+            <li>
+                <a routerLink="/login">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div>
+    <router-outlet></router-outlet>
+</div>

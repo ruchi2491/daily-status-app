@@ -1,0 +1,40 @@
+.vertical-menu {
+    width: 253px; 
+    background-color: #eee; 
+    border-radius: 5px;
+    border: oldlace;
+    border-style: solid;
+    height: 100%;
+    top: 50px;
+    left: 0;
+    border-color: lavender;
+    background-color: #f2f2f2;
+    border-right: 1px solid #EEE;
+    overflow: auto;
+    padding: 140px 0 40px;
+
+}
+img{
+    top: 0ex;
+    max-height: 80px;
+}
+.navbar{
+    height: 100px;
+}
+.vertical-menu P {
+    /*Grey background color*/
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 5px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+    left: 50;
+    margin-left: 30px;
+}
+li a{
+    margin-top:25px;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    font:bold;
+
+}

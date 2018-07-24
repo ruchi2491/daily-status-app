@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="col-md-12 form-group">
+    <div class="col-md-2">
+      <label>Employee ID</label>
+    </div>
+    <div class="col-md-10">
+      <mat-form-field class="example-full-width">
+        <input matInput disabled [(ngModel)]="onestatus.empid" name="empid">
+      </mat-form-field>
+
+    </div>
+  </div>
+  <div class="col-md-12 form-group">
+    <div class="col-md-2">
+      <label>Date</label>
+    </div>
+    <div class="col-md-10">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a Date" name="date" 
+        [(ngModel)]="onestatus.date" >
+        <!-- (dateChange)="onChange()" -->
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="col-md-12 form-group">
+    <div class="col-md-2">
+      <label>Project Name</label>
+    </div>
+    <div class="col-md-10">
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="onestatus.project_name" name="project_name">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="col-md-12 form-group">
+    <div class="col-md-2">
+      <label>Status</label>
+    </div>
+    <div class="col-md-10">
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <textarea matInput name='status' [(ngModel)]="onestatus.today_status" name="today_status"></textarea>
+          <mat-icon matSuffix *ngIf="textarea==false">mode_edit</mat-icon>
+          <!-- [disabled]=textarea -->
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-12 form-group">
+    <div class="col-md-2 button-row">
+      <button type="submit" mat-raised-button color="primary" (click)='onSave()' [disabled]="onestatus.today_status == undefined">Save</button>
+      {{onestatus.today_status}}
+    </div>
+  </div>
+</div>
+<!-- <div>
+    <button (click)="onChange()">Click</button>
+  {{onestatus.empid}} {{onestatus.date | date}} {{onestatus.project_name}} {{onestatus.today_status}}
+</div> -->

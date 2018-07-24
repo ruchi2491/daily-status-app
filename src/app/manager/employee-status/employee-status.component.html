@@ -1,0 +1,79 @@
+<div class="container">
+  <mat-tab-group>
+    <mat-tab label="status of current month">
+      <div class="col-md-12">
+        <div class="col-md-3">
+          <label>Select Employee ID</label>
+        </div>
+        <div class="col-md-3">
+          <select class="form-control" [(ngModel)]="selectedFirstOption" name="first">
+            <option selected hidden>Choose here</option>
+            <option *ngFor="let employee of employees">{{employee.empid}}</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <button (click)="getStatusWithId()" class="btn btn-primary">Show Status</button>
+          <button (click)="resetFirst()" class="btn btn-primary">Reset</button>
+        </div>
+      </div>
+      <div class="col-md-12" *ngIf="showTable2">
+        <table id="employees">
+          <tr>
+            <th>Employee ID</th>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+          <tr *ngFor="let dailystatus of allstatus">
+            <td>{{dailystatus.empid}}</td>
+            <td>{{dailystatus.date | date}}</td>
+            <td>{{dailystatus.today_status}}</td>
+          </tr>
+        </table>
+      </div>
+    </mat-tab>
+    <mat-tab label="status of previous month">
+      <div class="col-md-12">
+        <div class="col-md-4">
+          <label>Select Employee ID</label>
+        </div>
+        <div class="col-md-4">
+          <select class="form-control" [(ngModel)]="selectedSecondOption" name="second">
+              <option selected hidden>Choose here</option>
+              <option *ngFor="let employee of employees">{{employee.empid}}</option>
+            </select>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="col-md-4">
+          <label>Select Year and Month</label>
+        </div>
+        <div class="col-md-4">
+          <select class="form-control" [(ngModel)]="selectedYearOption" name="year" >
+              <option selected hidden>Choose here</option>
+            <option *ngFor="let year of years">{{year}}</option>
+        </select>
+        </div>
+        <div class="col-md-4">
+          <select class="form-control" [(ngModel)]="selectedMonthOption" name="month" >
+            <option selected hidden>Choose here</option>
+            <option *ngFor="let month of months">{{month}}</option>
+        </select>
+        </div>
+      </div>
+      <button (click)="getStatusWithDateAndId()" class="btn btn-primary">Show Status</button>
+      <button (click)="resetSecond()" class="btn btn-primary">Reset</button>
+      <div class="col-md-12" *ngIf="showTable1">
+        <table id="employees">
+          <tr>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+          <tr *ngFor="let dailystatus of allstatus">
+            <td>{{dailystatus.date | date}}</td>
+            <td>{{dailystatus.today_status}}</td>
+          </tr>
+        </table>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

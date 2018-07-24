@@ -1,0 +1,32 @@
+#employees {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#employees td, #employees th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#employees tr:nth-child(even){background-color: #f2f2f2;}
+
+#employees tr:hover {background-color: #ddd;}
+
+#employees th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+div.container{
+    border-style: solid;
+   border-radius: 5px;
+   /* border-color: lavender;
+   background-color: #e0f3ee;  */
+   margin-top: 5%;
+   padding: 10px;
+   width: 70%;
+   border-width: thin;
+}
