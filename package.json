@@ -6,14 +6,17 @@
     "ng": "ng",
     "start": "concurrently --kill-others \"npm run serve-api\" \"npm run serve\"",
     "serve": "ng serve --proxy-config proxy-conf.json",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "serve-api": "node server.js"
+    "serve-api": "node server.js",
+    "postinstall": "ng build"
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "~1.7.4",
+    "@angular/compiler-cli": "^5.2.0",
     "@angular/animations": "^5.2.0",
     "@angular/cdk": "^5.2.0",
     "@angular/common": "^5.2.0",
@@ -41,7 +44,12 @@
     "serve-favicon": "^2.5.0",
     "sweetalert2": "^7.25.0",
     "uuid": "^3.2.1",
-    "zone.js": "^0.8.19"
+    "zone.js": "^0.8.19",
+    "typescript": "~2.5.3"
+  },
+  "engines": {
+    "node": "~6.11.2",
+    "npm": "~3.10.10"
   },
   "devDependencies": {
     "@angular/cli": "~1.7.4",
