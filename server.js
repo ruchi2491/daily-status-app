@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-// const http = require('http');
+const http = require('http');
 const app = express();
 // var favicon = require('serve-favicon');
 // var logger = require('morgan');
@@ -11,20 +11,34 @@ var employee = require('./server/routes/api/employee');
 var dailystatus = require('./server/routes/api/dailystatus');
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost/Dailystatusdb', {promiseLibrary: require('bluebird') })
-  .then(() =>  console.log('connection succesful'))
-  .catch((err) => console.error(err));
+// mongoose.connect('mongodb://localhost/Dailystatusdb', {promiseLibrary: require('bluebird') })
+//   .then(() =>  console.log('connection succesful'))
+//   .catch((err) => console.error(err));
+
+mongoose.connect("mongodb://atmecs:atmecs123@ds145951.mlab.com:45951/dailystatusdb", function (error) {
+  try {
+    if (error) {
+      console.error('error' + error)
+    }else {
+      console.log('mongodb connection succesfull!!')
+    }
+  } catch (error) {
+    console.error('error' + error)
+  }
+})
 
 // app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({'extended':'false'}));
+app.use(bodyParser.urlencoded({extended:false}));
 
-app.use(express.static(path.join(__dirname, '/src')));
-app.use('/node_modules', express.static(__dirname + '/node_modules'));
-app.use('/app', express.static(__dirname + '/app'));
 
-app.use('/employee', express.static(path.join(__dirname, 'dist')));
-app.use('/dailystatus', express.static(path.join(__dirname, 'dist')));
+//app.use(express.static(path.join(__dirname, '/src')));
+app.use(express.static(path.join(__dirname, 'dist')));
+//app.use('/node_modules', express.static(__dirname + '/node_modules'));
+//app.use('/app', express.static(__dirname + '/app'));
+
+//app.use('/employee', express.static(path.join(__dirname, 'dist')));
+//app.use('/dailystatus', express.static(path.join(__dirname, 'dist')));
 
 app.get('/api/employee', employee.getEmployeeList);
 app.get('/api/employee/:id',employee.getEmployeeDetails);
@@ -73,4 +87,5 @@ app.get('*', (req, res) => {
 //Set Port
 const port = process.env.PORT || '3000';
 app.set('port', port);
-app.listen(port, () => console.log(`Running on localhost:${port}`));
+const server = http.createServer(app);
+server.listen(port, () => console.log(`Running on localhost:${port}`));

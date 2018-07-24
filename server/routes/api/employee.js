@@ -11,11 +11,11 @@ module.exports = {
 
   // /* GET SINGLE Employee BY ID */
   getEmployeeDetails: function (req, res) {
-    console.log("getting from UI" + req.params.id);
    if(req.params.id.includes("@atmecs.com")){
-     console.log("Inside If");
+     
     Employee.find({emailid : req.params.id}, function (err, result) {
           if (err){
+            console.log(json.stringify(err))
             res.send(err);
           }
           console.log(result);
