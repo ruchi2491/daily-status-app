@@ -2,6 +2,7 @@
   "name": "my-daily-status",
   "version": "0.0.0",
   "license": "MIT",
+  "main" : "server.js",
   "scripts": {
     "ng": "ng",
     "start": "concurrently --kill-others \"npm run serve-api\" \"npm run serve\"",
@@ -12,6 +13,10 @@
     "e2e": "ng e2e",
     "serve-api": "node server.js",
     "postinstall": "ng build"
+  },
+  "engines": {
+    "node": "~6.11.2",
+    "npm": "~3.10.10"
   },
   "private": true,
   "dependencies": {
@@ -46,10 +51,6 @@
     "uuid": "^3.2.1",
     "zone.js": "^0.8.19",
     "typescript": "~2.5.3"
-  },
-  "engines": {
-    "node": "~6.11.2",
-    "npm": "~3.10.10"
   },
   "devDependencies": {
     "@angular/cli": "~1.7.4",
