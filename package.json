@@ -5,13 +5,13 @@
   "main": "server.js",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently --kill-others \"npm run serve-api\" \"npm run serve\"",
-    "serve": "ng serve --proxy-config proxy-conf.json",
+    "start": "node server.js",
+ 
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "serve-api": "node server.js",
+  
     "postinstall": "ng build --aot --target=production"
   },
   "engines": {
