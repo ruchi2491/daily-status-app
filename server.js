@@ -6,11 +6,11 @@ const app = express();
 // var favicon = require('serve-favicon');
 // var logger = require('morgan');
 const uuidv1 = require('uuid/v1');
+var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 
 var employee = require('./server/routes/api/employee');
 var dailystatus = require('./server/routes/api/dailystatus');
-var mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
 // mongoose.connect('mongodb://localhost/Dailystatusdb', {promiseLibrary: require('bluebird') })
 //   .then(() =>  console.log('connection succesful'))
 //   .catch((err) => console.error(err));
