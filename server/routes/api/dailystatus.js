@@ -1,4 +1,4 @@
-var Status = require('../../../models/dailystatus.js');
+var Status = require('../../../models/Dailystatus.js');
 
 module.exports = {
   getDailystatus: function (req, res) {
