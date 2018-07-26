@@ -2,7 +2,7 @@
   "name": "my-daily-status",
   "version": "0.0.0",
   "license": "MIT",
-  "main" : "server.js",
+  "main": "server.js",
   "scripts": {
     "ng": "ng",
     "start": "concurrently --kill-others \"npm run serve-api\" \"npm run serve\"",
