@@ -1,4 +1,4 @@
-var Employee = require('../../../models/Employee.js');
+var Employee = require('../../../models/Employee');
 
 module.exports = {
   //Employee List
