@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const http = require('http');
 const app = express();
+const server = http.Server(app);
 // var favicon = require('serve-favicon');
 // var logger = require('morgan');
 const uuidv1 = require('uuid/v1');
@@ -87,5 +88,4 @@ app.get('*', (req, res) => {
 //Set Port
 const port = process.env.PORT || '3001';
 app.set('port', port);
-const server = http.createServer(app);
 server.listen(port, () => console.log(`Running on localhost:${port}`));
