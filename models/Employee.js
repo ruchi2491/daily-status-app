@@ -14,6 +14,7 @@ var EmployeeSchema = new mongoose.Schema({
     reporting_to:String,
     level:String,
     token:String,
-    Role:String
+    Role:String,
+    mgrid:String
   });
   module.exports = mongoose.model('Employee', EmployeeSchema);

@@ -28,10 +28,15 @@
     <div class="col-md-2">
       <label>Project Name</label>
     </div>
-    <div class="col-md-10">
-      <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="onestatus.project_name" name="project_name">
-      </mat-form-field>
+    <div class="col-md-4">
+      <select class="form-control" [(ngModel)]="onestatus.project_name" name="project_name" >
+        <option>Articulation</option>
+        <option>Elearning</option>
+        <option>Gainsight</option>
+        <option>SDP</option>
+        <option>TCC</option>
+        <option>TCCMIG</option>
+    </select>
     </div>
   </div>
   <div class="col-md-12 form-group">
@@ -51,7 +56,6 @@
   <div class="col-md-12 form-group">
     <div class="col-md-2 button-row">
       <button type="submit" mat-raised-button color="primary" (click)='onSave()' [disabled]="onestatus.today_status == undefined">Save</button>
-      {{onestatus.today_status}}
     </div>
   </div>
 </div>

@@ -21,11 +21,13 @@
           <tr>
             <th>Employee ID</th>
             <th>Date</th>
+            <th>Project Name</th>
             <th>Status</th>
           </tr>
           <tr *ngFor="let dailystatus of allstatus">
             <td>{{dailystatus.empid}}</td>
             <td>{{dailystatus.date | date}}</td>
+            <td>{{dailystatus.project_name}}</td>
             <td>{{dailystatus.today_status}}</td>
           </tr>
         </table>
@@ -65,11 +67,15 @@
       <div class="col-md-12" *ngIf="showTable1">
         <table id="employees">
           <tr>
+            <th>Employee ID</th>
             <th>Date</th>
+            <th>Project Name</th>
             <th>Status</th>
           </tr>
           <tr *ngFor="let dailystatus of allstatus">
+              <td>{{dailystatus.empid}}</td>
             <td>{{dailystatus.date | date}}</td>
+            <td>{{dailystatus.project_name}}</td>
             <td>{{dailystatus.today_status}}</td>
           </tr>
         </table>
