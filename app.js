@@ -23,6 +23,7 @@ app.use('/employees', express.static(path.join(__dirname, 'dist')));
 app.use('/employee', employee);
 app.use('/dailystatuses', express.static(path.join(__dirname, 'dist')));
 app.use('/dailystatus', dailystatus);
+app.set('view engine', 'jade');
 
 
 // catch 404 and forward to error handler

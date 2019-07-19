@@ -16,7 +16,7 @@ var dailystatus = require('./server/routes/api/dailystatus');
 //   .then(() =>  console.log('connection succesful'))
 //   .catch((err) => console.error(err));
 
-mongoose.connect("mongodb://atmecs:atmecs123@ds145951.mlab.com:45951/dailystatusdb", function (error) {
+mongoose.connect("mongodb://ruchi2491:Ruchi@123@ds145951.mlab.com:45951/dailystatusdb", { useNewUrlParser: true },function (error) {
   try {
     if (error) {
       console.error('error' + error)
