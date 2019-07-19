@@ -31,6 +31,7 @@ export class LoginComponent {
 
     login() {
         this.http.get('/api/employee/' + this.username).subscribe(data => {
+            console.log("THIS IS EMPLOYEE ID",this.employees.empid)
             this.employees = data[0];
             if(this.employees){
                 this.empid = this.employees.empid;
